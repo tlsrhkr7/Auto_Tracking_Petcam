@@ -19,14 +19,14 @@ YOLO 기반 실시간 객체 검출과 서보모터 제어로 반려동물을 �
 
 ## 시스템 아키텍처
 
-```
-[부저]  ─┐
-[LED]   ─┼─→ [TOPST D3] ──(TCP 통신)──→ [PC]
-[서보모터]┘        ↓                         ↕ (Flask 통신)
-                [Camera] ────────→ [YOLO]  [스마트폰] ←──(무선 통신)──→ [웹사이트]
-                                                                              ↓
-                                                                          [UI / Control]
-```
+\`\`\`
+[부저] ─┐
+[LED] ─┼─→ [TOPST D3] ──(TCP 통신)──→ [PC]
+[서보모터]┘ ↓ ↕ (Flask 통신)
+[Camera] ────────→ [YOLO] [스마트폰] ←──(무선 통신)──→ [웹사이트]
+↓
+[UI / Control]
+\`\`\`
 
 - **TOPST 보드**: 부저·LED·서보모터 제어
 - **PC**: YOLO 실시간 객체 검출, 바운딩 박스 중심 좌표 계산·전송
@@ -36,6 +36,19 @@ YOLO 기반 실시간 객체 검출과 서보모터 제어로 반려동물을 �
 ## 기술 스택
 
 YOLO v11n · C++(Topst D3) · Python / Flask · JavaScript / CSS · TCP 소켓
+
+## 실행 화면
+
+<table>
+  <tr>
+    <td align="center"><b>웹 실행 화면 (객체 검출)</b></td>
+    <td align="center"><b>카메라 자동 추적</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/petcam-web-demo.jpeg" height="300" alt="반려동물 홈캠 웹 실행 화면"></td>
+    <td><img src="docs/petcam-tracking-demo.gif" height="300" alt="카메라 자동 추적 실행 영상"></td>
+  </tr>
+</table>
 
 ## 문제점 및 향후 계획
 
